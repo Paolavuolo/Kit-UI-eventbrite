@@ -1,8 +1,12 @@
 /* couleur et police */
+  /*google font*/
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Montagu+Slab:wght@200;300;400&family=Road+Rage&family=Roboto&family=Roboto+Slab&display=swap');
+
+
 :root {
     --bs-blue: #3a8fd9;
     --bs-indigo: #6610f2;
-    --bs-purple: #686dc3;
+    --bs-purple: #8335a1;
     --bs-pink: #e83283;
     --bs-red: #fc346f;
     --bs-orange: #fd7e14;
@@ -57,6 +61,7 @@
     --navbar-icon-color: #fff;
     --navbar-text-color: #fff;
     --navbar-transition-speed: .2s; /*durée de transition*/
+    --box-transition-speed: .3s;
   }
   
   *,
@@ -179,9 +184,260 @@
   }
 
   /* Construction FORMULAIRE D'AUTHENTIFICATION*/
+body_form{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #e9e9e8;
+    font-family: 'Roboto Slab', serif;
+}
+form{
+    margin-top: 70px;
+    padding: 40px 60px;
+    min-width: 300px; /* largeur minimal */
+}
+form h1{
+    color: #6610f2;
+}
+
+form .social-media {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+form .social-media p{
+    padding: 5px;
+    margin-left: 10px;
+    border: 1px solid #fd7e14;
+    border-radius: 100%;
+    width: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+form p.Email {
+    font-size: 20px;
+}
+form .inputs {
+    display: flex;
+    flex-direction: column;
+}
+form .inputs input[type='Email'], input[type='password'] {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    margin-bottom: 1rem !important;
+    outline: none;
+} 
+
+form p.inscription {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: var(--bs-gray-600);
+}
+
+form p.inscription span a{
+    text-decoration: none;
+    color: var(--bs-indigo);
+    font-weight: lighter;
+}
+
+form button{
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: var(--bs-orange);
+    color: white;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
 
   /* Construction d'une BANNIERE*/
+.header {
+    background: url(./images/festival.jpg) no-repeat center center/cover;
+    width: 2024px;
+    height: 500px;
+    color: white;
+}
+
+header .header_content {
+     background-color: #00000065;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+.header_0 {
+    font-size: 86px;
+    font-weight: 500;
+}
+.btn_cta {
+    background-color: var(--bs-blue);
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+}
+
+.btn_cta:hover {
+    background-color: var(--bs-light);
+    color: black;
+}
+
+.header .header_content .header_0 { padding-bottom: 12px;}
+
+.cta_catch {
+    font-size: 18px;
+    margin-bottom: 22px;
+}
+
+span.cta_catch {font-family: 'Amatic SC', cursive; font-size: 30px;}
+ 
   /* Construction CARTE*/
+* {box-sizing: content-box;}
+
+body_card {
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+    line-height: 1.4;
+    background-color: var(--bs-gray-400);
+}
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: white;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--box-transition-speed);
+}
+
+.card:hover {
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+}
+.card_date {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    padding-top: 10px;
+    background-color: var(--bs-orange);
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 13px;
+    font-weight: bold;
+}
+
+.card_date_day {font-size: 14px;display: block;}
+.card_date_month {font-size: 10px; display: block; text-transform: uppercase;}
+.card_img {
+    height: 235px;
+    overflow: hidden; /* permet de masquer l'image*/
+    background-color: black;
+    transition: height var(--box-transition-speed);
+}
+.card:hover .card_img img{
+    opacity: 0.6;
+    transform: scale(1.2);
+}
+.card:hover .card_img{
+    height: 90px;
+}
+
+img{
+    display: block; 
+    opacity: 1;
+    transition: opacity var(--box-transition-speed); transform: var(--box-transition-speed);
+    transform: scale(1);
+}
+
+.card_category a{
+    position: absolute;
+    left: 0;
+    margin-top: -35px; /* le placer sur l'image */
+    height: 25px;
+    padding: 0 15px;
+    background-color: var(--bs-orange);
+    color: white;
+    font-size: 11px;
+    line-height: 25px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.card_body {
+    text-align: justify;
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 185px;
+    transition: height var(--box-transition-speed);
+}
+
+.card:hover .card_body {
+    height: 330px;
+}
+.card_title{
+    margin: 0px;
+    padding: 0 0 10px 0;
+    font-size: 22px;
+    color: #000;
+    font-weight: bold;
+}
+
+.card_subtitle{
+    font-size: 19px;
+    margin: 0px;
+    padding: 2px 0 10px 0;
+    color: var(--bs-orange);
+}
+
+.card_description {
+    color: var(--bs-gray-700);
+    font-size: 14px;
+    line-height: 27px;
+    opacity: 0;
+}
+.card:hover .card_description {
+    opacity: 1;
+    transition: var(--box-transition-speed);
+}
+.card_description a{
+    text-decoration: none;
+    color: var(--bs-body-bg);
+    font-weight: lighter;    
+}
+.card_footer{
+    position: absolute;
+    bottom: 0px;
+    left: 20px;
+    right: 20px;
+    font-size: 11px;
+    color: var(--bs-gray-600);
+}
+
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 2px;
+}
+.icon-comment a{
+    text-decoration: none;
+    color: var(--bs-gray-600);
+}
+.icon-comment i{
+    margin-left: 40px;
+    text-decoration: none;
+    color: var(--bs-gray-600);
+}
   /* Construction LISTE DE CARTE*/
   /* Construction des COMMENTAIRES*/
   /* Disposition des éléments de la page d'acceuil*/
